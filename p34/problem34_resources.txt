@@ -1,0 +1,9 @@
+(model solution) https://discuss.leetcode.com/topic/16486/9-11-lines-o-log-n
+
+(more discussion) http://stackoverflow.com/questions/212358/binary-search-bisection-in-python
+
+(source code for the bisect module) https://hg.python.org/cpython/file/2.7/Lib/bisect.py
+
+todo: write an overview of binary search approaches
+(-) ordinary binary search
+(-) search for first occurrence
