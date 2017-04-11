@@ -42,3 +42,6 @@ class ProblemTest(unittest.TestCase):
 
 if __name__ == '__main__':
   unittest.main()
+
+# model solutions, see.. 
+# https://discuss.leetcode.com/topic/32023/4-5-lines-python-solutions
