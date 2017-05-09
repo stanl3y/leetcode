@@ -14,12 +14,8 @@ class Solution(object):
         :rtype: ListNode
         """
         # initialize
-        root_lo = ListNode(None)
-        root_hi = ListNode(None)
-
-        last_lo = root_lo
-        last_hi = root_hi
-        
+        last_lo = root_lo = ListNode(None)
+        last_hi = root_hi = ListNode(None)
         curr = head
 
         # append each node to the correct sequence
@@ -32,28 +28,16 @@ class Solution(object):
                 last_hi = last_hi.next
             curr = curr.next
 
-        last_lo.next = None
+        last_lo.next = root_hi.next
         last_hi.next = None
-
-        # join lists if both exist
-        # or return one
-        if root_lo.next and root_hi.next:
-            last_lo.next = root_hi.next
-            return root_lo.next
-        else:
-            return root_lo.next or root_hi.next
-
-
-
         
+        return root_lo.next
 
 
 import unittest
 
 class ProblemTest(unittest.TestCase):
     def test(self):
-        # self.assertEqual(0, Solution().insert_function())
-
         cases = [
             { 'given': [], 'split': 0, 'expect': [] },
 
@@ -61,7 +45,6 @@ class ProblemTest(unittest.TestCase):
             { 'given': [1,2,3], 'split': 4, 'expect': [1,2,3] },
 
             { 'given': [1,4,3,2,5,2], 'split': 3, 'expect': [1,2,2,4,3,5]}
-
         ]
 
         for case in cases:
