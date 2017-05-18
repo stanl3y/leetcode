@@ -8,45 +8,35 @@ class Solution(object):
     def reverseList(self, head): 
         return self.reverseList_recursive(head)
 
+    # refactored based on the Leetcode model solution
     def reverseList_recursive(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-
-        if not head: return head
-        self.new_head = None
-
-        def recursion(node):
-            if not node or not node.next:
-                self.new_head = node
-                return node
-            else:
-                next_node = recursion(node.next)
-                next_node.next = node
-                return node
-
-        recursion(head)
+        
+        if not head or not head.next: return head
+        new_head = self.reverseList_recursive(head.next)
+        head.next.next = head
         head.next = None
+        return new_head
 
-        return self.new_head
-
+    # refactored based on the Leetcode model solution
     def reverseList_iterative(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-
         if not head or not head.next: return head
-        slow, fast, faster = head, head.next, head.next.next
+        slow, fast = head, head.next
 
-        while True:
+        while fast:
+            faster = fast.next
             fast.next = slow
-            if faster == None: break
-            slow, fast, faster = fast, faster, faster.next
+            slow, fast = fast, faster
 
         head.next = None
-        return fast
+        return slow
 
 
         
@@ -70,6 +60,8 @@ class ProblemTest(unittest.TestCase):
             answer = ListNode.linked_list_to_array(answer, [])
         
             self.assertEqual(answer, case['expect'])
+
+
 
 if __name__ == '__main__':
     unittest.main()
