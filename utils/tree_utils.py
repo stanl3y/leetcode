@@ -8,6 +8,9 @@ class Tree(object):
     def __init__(self, root):
         self.root = root
 
+
+    ################ TRAVERSALS ################
+
     def preorder(self):
         return self.traversal(lambda node: [node.right, node.left, node])
 
@@ -34,3 +37,40 @@ class Tree(object):
             else:
                 traversal.append(curr_node.val)
         return traversal
+
+
+    ################ TREE BUILDING ################
+
+    @classmethod
+    def from_inorder_preorder(cls, inorder, preorder):
+        assumptions = [
+            set(preorder) == set(inorder),
+            len(preorder) == len(set(preorder)),
+            len(inorder) == len(set(inorder)),
+        ]
+        if not all(assumptions): 
+            raise ValueError("both traversals must have same length, and no duplicates")
+
+        tree = Tree(None)
+        tree.root = tree.build_from_inorder_preorder(inorder, preorder)
+        return tree
+
+
+    def build_from_inorder_preorder(self, inorder, preorder):
+        if len(preorder) == len(inorder) == 0: return None
+        curr_val = preorder[0]
+        split = inorder.index(curr_val)
+
+        curr_node = TreeNode(curr_val)
+        curr_node.left = self.build_from_inorder_preorder(inorder[:split], preorder[1:split+1])
+        curr_node.right = self.build_from_inorder_preorder(inorder[split+1:], preorder[split+1:])
+
+        return curr_node        
+
+    @classmethod
+    def from_inorder_postorder(cls, inorder, postorder):
+        pass
+
+    def build_from_inorder_postorder(self, inorder, postorder):
+        pass
+

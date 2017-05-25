@@ -31,6 +31,16 @@ class ProblemTest(unittest.TestCase):
         self.assertEqual(exp_inorder, tree.inorder())
         self.assertEqual(exp_postorder, tree.postorder())
 
+    def test_tree_building(self):
+        preorder = [1,2,4,5,10,11,3,7,14]
+        inorder = [4,2,10,5,11,1,3,14,7]
+        
+        tree = Tree.from_inorder_preorder(inorder, preorder)
+
+        # using already existing methods from file utils for testing
+        self.assertEqual(preorder, tree.preorder())
+        self.assertEqual(inorder, tree.inorder())
+
 
 if __name__ == '__main__':
     unittest.main()
