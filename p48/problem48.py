@@ -89,28 +89,28 @@ class ProblemTest(unittest.TestCase):
     
     def test_even(self):
         matrix = [
-          [1,2],
-          [3,4]  
+            [1,2],
+            [3,4]  
         ]
 
         exp_matrix = [
-          [3,1],
-          [4,2]
+            [3,1],
+            [4,2]
         ]
         Solution().rotateMatrix(matrix)
         self.assertEqual(exp_matrix, matrix)
 
     def test_odd(self):
         matrix = [
-          [1,2,3],
-          [4,5,6],
-          [7,8,9]
+            [1,2,3],
+            [4,5,6],
+            [7,8,9]
         ]
 
         expect = [
-          [7,4,1],
-          [8,5,2],
-          [9,6,3]
+            [7,4,1],
+            [8,5,2],
+            [9,6,3]
         ]
 
         Solution().rotateMatrix(matrix)
@@ -124,4 +124,4 @@ class ProblemTest(unittest.TestCase):
         self.assertEqual((2,0), Solution.rotCCW(*(0,0),3))
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

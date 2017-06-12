@@ -48,4 +48,4 @@ class ProblemTest(unittest.TestCase):
         self.assertEqual(3, Solution().longest_substr_len("dvdf"))
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

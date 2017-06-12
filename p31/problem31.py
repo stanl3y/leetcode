@@ -50,13 +50,13 @@ class ProblemTest(unittest.TestCase):
     
     def test(self):
         cases = [
-          {'nums': [1,2,3], 'exp_nums': [1,3,2]},
-          {'nums': [3,2,1], 'exp_nums': [1,2,3]},
-          {'nums': [1,1,5], 'exp_nums': [1,5,1]},
+            {'nums': [1,2,3], 'exp_nums': [1,3,2]},
+            {'nums': [3,2,1], 'exp_nums': [1,2,3]},
+            {'nums': [1,1,5], 'exp_nums': [1,5,1]},
 
-          {'nums': [2,1,4,3], 'exp_nums': [2,3,1,4]},
-          {'nums': [2,4,3,1], 'exp_nums': [3,1,2,4]},
-          {'nums': [4,3,2,1], 'exp_nums': [1,2,3,4]}
+            {'nums': [2,1,4,3], 'exp_nums': [2,3,1,4]},
+            {'nums': [2,4,3,1], 'exp_nums': [3,1,2,4]},
+            {'nums': [4,3,2,1], 'exp_nums': [1,2,3,4]}
         ]
 
         for case in cases:
@@ -66,4 +66,4 @@ class ProblemTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

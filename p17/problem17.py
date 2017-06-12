@@ -50,4 +50,4 @@ class ProblemTest(unittest.TestCase):
             self.assertEqual(set(expect), set(Solution().letterCombinations(case)))
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

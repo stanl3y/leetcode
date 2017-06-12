@@ -27,16 +27,14 @@ import unittest
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 35: Search Insert Position. """
     
-  def test(self):
-    self.assertEqual(2, Solution().searchInsert([1,2,3,4], 3)) # find middle
-    self.assertEqual(2, Solution().searchInsert([1,2,4,5], 3)) # insert middle
+    def test(self):
+        self.assertEqual(2, Solution().searchInsert([1,2,3,4], 3)) # find middle
+        self.assertEqual(2, Solution().searchInsert([1,2,4,5], 3)) # insert middle
 
-    self.assertEqual(0, Solution().searchInsert([1,2,3,4], 0)) # insert left edge
-    self.assertEqual(4, Solution().searchInsert([1,2,3,4], 5)) # insert right edge
+        self.assertEqual(0, Solution().searchInsert([1,2,3,4], 0)) # insert left edge
+        self.assertEqual(4, Solution().searchInsert([1,2,3,4], 5)) # insert right edge
 
 
-
-    
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

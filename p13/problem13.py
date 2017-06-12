@@ -25,13 +25,13 @@ import unittest
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 13: Roman to Integer. """
     
-  def test(self):
+    def test(self):
         cases = {0: ""}
         cases.update({1: "I", 5: "V", 10: "X", 50: "L", 100: "C", 500: "D", 1000: "M" })
         cases.update({2: "II", 9: "IX", 49: "XLIX", 94: "XCIV"})
 
         for integer, roman in cases.items():
-          self.assertEqual(integer, Solution().romanToInt(roman))
+            self.assertEqual(integer, Solution().romanToInt(roman))
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

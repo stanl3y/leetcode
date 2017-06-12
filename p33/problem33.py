@@ -38,35 +38,26 @@ class Solution(object):
         insert_pos = bisect.bisect_left(nums, target, lo, hi)
         return insert_pos if nums[insert_pos] == target else -1
 
-
-
-
-
-
-
-
+        
 import unittest
 
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 33: Search in Rotated Sorted Array. """
-  def test(self):
+    def test(self):
+        # general case
+        my_nums = [4,5,6,7,0,1,2]
+        
+        self.assertEqual(1, Solution().search(my_nums, 5))
+        self.assertEqual(4, Solution().search(my_nums, 0))
+        self.assertEqual(-1, Solution().search(my_nums, 3))
 
-    # general case
-    my_nums = [4,5,6,7,0,1,2]
-    
-    self.assertEqual(1, Solution().search(my_nums, 5))
-    self.assertEqual(4, Solution().search(my_nums, 0))
-    self.assertEqual(-1, Solution().search(my_nums, 3))
+        # small cases
+        self.assertEqual(-1, Solution().search([], 1))
+        self.assertEqual(0, Solution().search([1], 1))
 
-
-    # small cases
-    self.assertEqual(-1, Solution().search([], 1))
-    self.assertEqual(0, Solution().search([1], 1))
-
-    # no rotation case
-    self.assertEqual(2, Solution().search([0,1,2,3,4], 2))
-
+        # no rotation case
+        self.assertEqual(2, Solution().search([0,1,2,3,4], 2))
 
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

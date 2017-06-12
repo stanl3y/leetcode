@@ -21,14 +21,14 @@ class Solution(object):
 
 
     def prefixOfTwo(self, first, second):
-      # find first index where strings don't match
-      min_len = min(len(first), len(second))
-      i = 0
+        # find first index where strings don't match
+        min_len = min(len(first), len(second))
+        i = 0
 
-      while i < min_len and first[i] == second[i]:
+        while i < min_len and first[i] == second[i]:
         i += 1
 
-      return first[0:i]
+        return first[0:i]
 
 
 #    def longestCommonPrefixRecursive(self, strs):
@@ -51,19 +51,19 @@ import unittest
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 14: Longest Common Prefix. """
     
-  def test(self):
-    self.assertEqual("", Solution().prefixOfTwo("", "abcd"))
-    self.assertEqual("abc", Solution().prefixOfTwo("abcd", "abcefl"))
-    self.assertEqual("abc", Solution().prefixOfTwo("abc", "abc"))
+    def test(self):
+        self.assertEqual("", Solution().prefixOfTwo("", "abcd"))
+        self.assertEqual("abc", Solution().prefixOfTwo("abcd", "abcefl"))
+        self.assertEqual("abc", Solution().prefixOfTwo("abc", "abc"))
 
-  def test_solution(self):
-    self.assertEqual("", Solution().longestCommonPrefix([]))
+    def test_solution(self):
+        self.assertEqual("", Solution().longestCommonPrefix([]))
 
-    strs = ["alpha", "alpine", "alpen", "aligator", "alpruce?"]
-    self.assertEqual("al", Solution().longestCommonPrefix(strs))
+        strs = ["alpha", "alpine", "alpen", "aligator", "alpruce?"]
+        self.assertEqual("al", Solution().longestCommonPrefix(strs))
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()
 
 
         

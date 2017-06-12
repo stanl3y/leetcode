@@ -26,19 +26,19 @@ import unittest
 
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 20: Valid Parentheses. """
-  def test(self):
-    self.assertEqual(True, Solution().isValid(""))
-    self.assertEqual(True, Solution().isValid("([{}])"))
-    self.assertEqual(True, Solution().isValid("({})[]"))
+    def test(self):
+        self.assertEqual(True, Solution().isValid(""))
+        self.assertEqual(True, Solution().isValid("([{}])"))
+        self.assertEqual(True, Solution().isValid("({})[]"))
 
-    # not all brackets closed
-    self.assertEqual(False, Solution().isValid("({}"))
+        # not all brackets closed
+        self.assertEqual(False, Solution().isValid("({}"))
 
-    # closing the wrong bracket
-    self.assertEqual(False, Solution().isValid("(}"))
+        # closing the wrong bracket
+        self.assertEqual(False, Solution().isValid("(}"))
 
-    # closing an unopened bracket
-    self.assertEqual(False, Solution().isValid("]"))
+        # closing an unopened bracket
+        self.assertEqual(False, Solution().isValid("]"))
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

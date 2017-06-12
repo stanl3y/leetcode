@@ -39,18 +39,18 @@ import unittest
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 22: Generate Parentheses. """
     
-  def test(self):
-    self.assertEqual([''], Solution().generateParenthesis(0))
-    self.assertEqual(["()"], Solution().generateParenthesis(1))
+    def test(self):
+        self.assertEqual([''], Solution().generateParenthesis(0))
+        self.assertEqual(["()"], Solution().generateParenthesis(1))
 
-    level3_prths = [
-        "((()))",
-        "(()())",
-        "(())()",
-        "()(())",
-        "()()()"
-    ]
-    self.assertEqual(level3_prths, Solution().generateParenthesis(3))
+        level3_prths = [
+            "((()))",
+            "(()())",
+            "(())()",
+            "()(())",
+            "()()()"
+        ]
+        self.assertEqual(level3_prths, Solution().generateParenthesis(3))
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

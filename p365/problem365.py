@@ -43,4 +43,4 @@ class ProblemTest(unittest.TestCase):
             self.assertEqual(value, Solution().canMeasureWater(x, y, z))
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

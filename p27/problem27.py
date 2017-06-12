@@ -21,14 +21,14 @@ import unittest
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 27: Remove Element. """
     
-  def test(self):
+    def test(self):
 
-    cases = [
-      {'nums': [], 'rem': 1, 'exp_nums': [], 'exp_len': 0},
-      {'nums': [1,2,3], 'rem': 4, 'exp_nums': [1,2,3], 'exp_len': 3},
-      {'nums': [1,1,1], 'rem': 1, 'exp_nums': [], 'exp_len': 0},
-      {'nums': [1,2,3,3,2,1], 'rem': 2, 'exp_nums': [1,3,3,1], 'exp_len': 4}      
-    ]
+        cases = [
+            {'nums': [], 'rem': 1, 'exp_nums': [], 'exp_len': 0},
+            {'nums': [1,2,3], 'rem': 4, 'exp_nums': [1,2,3], 'exp_len': 3},
+            {'nums': [1,1,1], 'rem': 1, 'exp_nums': [], 'exp_len': 0},
+            {'nums': [1,2,3,3,2,1], 'rem': 2, 'exp_nums': [1,3,3,1], 'exp_len': 4}      
+        ]
 
     for case in cases:
         nums = case['nums']
@@ -38,4 +38,4 @@ class ProblemTest(unittest.TestCase):
         self.assertEqual(case['exp_nums'], nums[:answer])
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

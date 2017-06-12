@@ -25,12 +25,12 @@ import unittest
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 58: Length of Last Word. """
     
-  def test(self):
-    self.assertEqual(0, Solution().lengthOfLastWord(""))
-    self.assertEqual(0, Solution().lengthOfLastWord(" "))
+    def test(self):
+        self.assertEqual(0, Solution().lengthOfLastWord(""))
+        self.assertEqual(0, Solution().lengthOfLastWord(" "))
 
-    self.assertEqual(1, Solution().lengthOfLastWord("a "))
-    self.assertEqual(2, Solution().lengthOfLastWord("aaa bc "))
+        self.assertEqual(1, Solution().lengthOfLastWord("a "))
+        self.assertEqual(2, Solution().lengthOfLastWord("aaa bc "))
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()
