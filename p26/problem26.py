@@ -1,4 +1,6 @@
 class Solution(object):
+  """ Solution for Leetcode problem 26: Remove Duplicates from Sort. Array. """
+
   def removeDuplicates(self, nums):
     """
     Counts unique elements and moves them to the left.
@@ -32,6 +34,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+  """ Tests for Leetcode problem 26: Remove Duplicates from Sort. Array. """
+  
   def test(self):
     self.assertEqual(0, Solution().removeDuplicates([]))
     self.assertEqual(1, Solution().removeDuplicates([1]))

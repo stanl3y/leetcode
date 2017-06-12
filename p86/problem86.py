@@ -7,6 +7,8 @@ from linked_list import ListNode
 #         self.next = None
 
 class Solution(object):
+    """ Solution for Leetcode problem 86: Partition List. """
+
     def partition(self, head, split):
         """
         :type head: ListNode
@@ -37,6 +39,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 86: Partition List. """
+    
     def test(self):
         cases = [
             { 'given': [], 'split': 0, 'expect': [] },

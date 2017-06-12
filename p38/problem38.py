@@ -1,4 +1,6 @@
 class Solution(object):
+    """ Solution for Leetcode problem 38: Count and Say. """
+
     def countAndSay(self, n):
         """
         :type n: int
@@ -34,6 +36,7 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 38: Count and Say. """
   def test(self):
     self.assertEqual("1", Solution().countAndSay(1))
     self.assertEqual("111221", Solution().countAndSay(5))

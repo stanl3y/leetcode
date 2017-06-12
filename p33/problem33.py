@@ -1,6 +1,7 @@
 import bisect
 
 class Solution(object):
+    """ Solution for Leetcode problem 33: Search in Rotated Sorted Array. """
 
     def midpoint(self, a, b):
         return a + (b - a) // 2
@@ -47,6 +48,7 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 33: Search in Rotated Sorted Array. """
   def test(self):
 
     # general case

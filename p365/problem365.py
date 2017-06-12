@@ -1,4 +1,5 @@
 class Solution(object):
+    """ Solution for Leetcode problem 365: Water and Jug Problem. """
     @staticmethod
     def gcd(a, b):
         return b if (a % b == 0) else Solution.gcd(b, a % b)
@@ -20,6 +21,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 365: Water and Jug Problem. """
+    
     def test_gcd(self):
         cases = {
             (24, 18): 6, 

@@ -6,6 +6,8 @@ class TreeNode(object):
         self.right = None
 
 class Solution(object):
+    """ Solution for Leetcode problem 94: Binary Tree Inorder Traversal. """
+
     def __init__(self):
         self.inorder = []
 
@@ -48,6 +50,7 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 94: Binary Tree Inorder Traversal. """
     def test(self):
         self.assertEqual([], Solution().inorderTraversal(None))
 

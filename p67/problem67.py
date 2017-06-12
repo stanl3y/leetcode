@@ -1,4 +1,6 @@
 class Solution(object):
+    """ Solution for Leetcode problem 67: Add Binary. """
+
     def addBinary(self, a, b):
         """
         :type a: str
@@ -28,6 +30,7 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 67: Add Binary. """
     def test(self):
         # self.assertEqual(0, Solution().insert_function())
         cases = [

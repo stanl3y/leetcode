@@ -1,4 +1,5 @@
 class Solution(object):
+    """ Solution for Leetcode problem 66: Plus One. """
     def plusOne(self, digits):
         """
         :type digits: List[int]
@@ -17,6 +18,7 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 66: Plus One. """
   def test(self):
     self.assertEqual([1], Solution().plusOne([0]))
     self.assertEqual([2], Solution().plusOne([1]))

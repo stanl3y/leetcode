@@ -1,15 +1,23 @@
 class Solution(object):
-    def twoSum(self, nums, target):
+    """ Solution to Leetcode problem 1: Two Sum. """
+
+    def two_sum(self, nums, target):
         """
+        Decide if two integers in a list add up to a given target.
+
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
         """
-        options = {}
-        for index, element in enumerate(nums):
 
-          if element in options:
-            return [options[element], index]
+        # idea: for each num, check if it complements a previously seen one
+        #   (keeping track of them in a dictionary)
+        seek = {}
+
+        for ind, element in enumerate(nums):
+          if element in seek:
+            return [seek[element], ind]
           else:
-            options[target - element] = index
+            seek[target - element] = ind
 
+        return []

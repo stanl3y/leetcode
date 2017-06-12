@@ -1,4 +1,5 @@
 class Solution(object):
+    """ Solution for Leetcode problem 31: Next Permutation. """
     def nextPermutation(self, nums):
         """
         :type nums: List[int]
@@ -45,6 +46,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 31: Next Permutation. """
+    
     def test(self):
         cases = [
           {'nums': [1,2,3], 'exp_nums': [1,3,2]},

@@ -1,4 +1,6 @@
 class Solution(object):
+    """ Solution for Leetcode problem 17: Letter Combinations.. . """
+
     def letterCombinations(self, digits):
         """
         :type digits: str
@@ -37,6 +39,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 17: Letter Combinations.. . """
+    
     def test(self):
         cases = {
             "23": ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]

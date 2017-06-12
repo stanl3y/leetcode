@@ -1,4 +1,6 @@
 class Solution(object):
+    """ Solution for Leetcode problem 39: Combination Sum. """
+
     def combinationSum(self, nums, target):
         """
         :type nums: List[int]
@@ -29,6 +31,7 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 39: Combination Sum. """
     def test(self):
 
         cases = [

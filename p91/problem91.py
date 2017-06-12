@@ -3,6 +3,8 @@ from functools import reduce
 import re
 
 class Solution(object):
+    """ Solution for Leetcode problem 91: Decode Ways. """
+
     def numDecodings(self, string):
         if not string: return 0
 
@@ -111,6 +113,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 91: Decode Ways. """
+    
     def test(self):
         self.assertEqual(0, Solution().numDecodings(""))
         self.assertEqual(5, Solution().numDecodings("1111"))

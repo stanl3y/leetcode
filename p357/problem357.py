@@ -1,6 +1,8 @@
 from functools import reduce
 
 class Solution(object):
+    """ Solution for Leetcode problem 357: Count Numbers with Unique Digits. """
+    
     def countNumbersWithUniqueDigits(self, n):
         """
         :type n: int
@@ -22,6 +24,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 357: Count Numbers with Unique Digits. """
+
     def test(self):
         # self.assertEqual(0, Solution().insert_function())
         cases = { 0:1, 1:10, 2:91, 3: 739}

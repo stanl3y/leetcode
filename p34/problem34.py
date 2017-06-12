@@ -8,7 +8,8 @@
 
 
 class Solution(object):
-    
+    """ Solution for Leetcode problem 34: Search for a Range. """
+
     def midpoint(self, a, b):
         return a + (b-a) // 2
 
@@ -66,6 +67,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+  """ Tests for Leetcode problem 34: Search for a Range. """
+  
   def test_small_cases(self):
     self.assertEqual([-1,-1], Solution().searchRange([], 0))
     self.assertEqual([0,0], Solution().searchRange([1], 1))

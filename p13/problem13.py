@@ -1,4 +1,5 @@
 class Solution(object):
+    """ Solution for Leetcode problem 13: Roman to Integer. """
     def romanToInt(self, s):
         """
         :type s: str
@@ -22,6 +23,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 13: Roman to Integer. """
+    
   def test(self):
         cases = {0: ""}
         cases.update({1: "I", 5: "V", 10: "X", 50: "L", 100: "C", 500: "D", 1000: "M" })

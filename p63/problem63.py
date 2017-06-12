@@ -2,9 +2,10 @@ from queue import Queue
 
 # Complexity: time O(mn), space O(mn)
 class Solution(object):
-    """ counts right-down paths in a rectangle """
+    """ Solution for Leetcode problem 63: Unique Paths II. """
 
     def uniquePathsWithObstacles(self, obstacles):
+        """ counts right-down paths in a rectangle """
         """
         :type obstacles: List[List[int]]
         :rtype: int
@@ -54,6 +55,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 63: Unique Paths II. """
+    
     def test(self):
         cases = {
             ((),(),()): 0,

@@ -1,4 +1,5 @@
 class Solution(object):
+    """ Solution for Leetcode problem 69: Sqrt(x). """
     def mySqrt(self, n):
         """
         :type x: int
@@ -21,6 +22,7 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 69: Sqrt(x). """
     def test(self):
         # self.assertEqual(0, Solution().insert_function())
 

@@ -1,4 +1,6 @@
 class Solution(object):
+    """ Solution for Leetcode problem 20: Valid Parentheses. """
+
     def isValid(self, string):
         """
         :type s: str
@@ -23,6 +25,7 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 20: Valid Parentheses. """
   def test(self):
     self.assertEqual(True, Solution().isValid(""))
     self.assertEqual(True, Solution().isValid("([{}])"))

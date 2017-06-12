@@ -1,4 +1,6 @@
 class Solution(object):
+    """ Solution for Leetcode problem 12: Integer to Roman. """
+
     def intToRoman(self, num):
         """
         :type num: int
@@ -48,6 +50,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 12: Integer to Roman. """
+    
   def test(self):
 
     

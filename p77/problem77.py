@@ -1,5 +1,7 @@
 import time
 class Solution(object):
+    """ Solution for Leetcode problem 77: Combinations. """
+
     def combine(self, n, k):
         """
         :type n: int
@@ -41,8 +43,9 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 77: Combinations. """
+
     def test(self):
-        # self.assertEqual(0, Solution().insert_function())
         cases = [
             { 'when': [[], 2], 'expect': [] },
             { 'when': [[1], 2], 'expect': [] },

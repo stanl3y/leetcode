@@ -1,4 +1,6 @@
 class Solution(object):
+    """ Solution for Leetcode problem 41: First Missing Positive. """
+
     def firstMissingPositive(self, nums):
         """
         :type nums: List[int]
@@ -26,6 +28,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 41: First Missing Positive. """
+    
     def test(self):
         cases = {
             (): 1,

@@ -5,6 +5,8 @@
 #         self.next = None
 
 class Solution(object):
+    """ Solution for Leetcode problem 206: Reverse Linked List. """
+
     def reverseList(self, head): 
         return self.reverseList_recursive(head)
 
@@ -46,6 +48,8 @@ import unittest
 from linked_list import ListNode
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 206: Reverse Linked List. """
+    
     def test(self):
         # self.assertEqual(0, Solution().insert_function())
         cases = [

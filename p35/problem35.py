@@ -1,4 +1,6 @@
 class Solution(object):
+    """ Solution for Leetcode problem 35: Search Insert Position. """
+
     def searchInsert(self, nums, target):
         """
         :type nums: List[int]
@@ -23,6 +25,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 35: Search Insert Position. """
+    
   def test(self):
     self.assertEqual(2, Solution().searchInsert([1,2,3,4], 3)) # find middle
     self.assertEqual(2, Solution().searchInsert([1,2,4,5], 3)) # insert middle

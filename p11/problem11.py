@@ -1,4 +1,6 @@
 class Solution(object):
+    """ Solution for Leetcode problem 11: Container With Most Water. """
+
     def maxArea(self, heights):
         """
         :type height: List[int]
@@ -22,6 +24,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 11: Container With Most Water. """
+
     def test(self):
         heights = [2,1,10,3,12,1,1,4]
         self.assertEqual(20, Solution().maxArea(heights))
@@ -29,4 +33,3 @@ class ProblemTest(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
         
-

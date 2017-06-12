@@ -7,6 +7,8 @@ from linked_list import ListNode
 #         self.next = None
 
 class Solution(object):
+    """ Solution for Leetcode problem 24: Swap Nodes in Pairs. """
+
     def swapPairs(self, head):
         """
         :type head: ListNode
@@ -35,6 +37,7 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 24: Swap Nodes in Pairs. """
   def test(self):
     #self.assertEqual(0, Solution().insert_function())
 

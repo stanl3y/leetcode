@@ -1,4 +1,6 @@
 class Solution(object):
+    """ Solution for Leetcode problem 70: Climbing Stairs. """
+    
     def climbStairs(self, n):
         """
         :type n: int
@@ -19,6 +21,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 70: Climbing Stairs. """
+
     def test(self):
         cases = {1:1, 2:2, 3:3, 5:8}
 

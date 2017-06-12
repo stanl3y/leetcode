@@ -1,10 +1,14 @@
 class Solution(object):
+    """ Solution for Leetcode problem 9: Palindrome Number. """
 
-    def isPalindrome(self, num):
+    def is_palindrome(self, num):
         """
+        Determines whether a given integer is a palindrome.
+
         :type x: int
         :rtype: bool
         """
+
         if num < 0: return False
 
         hi = lo = 1
@@ -29,20 +33,26 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
-  def test(self):
-    self.assertEqual(False, Solution().isPalindrome(-1))
-    self.assertEqual(False, Solution().isPalindrome(-121))
+    """ Tests for Leetcode problem 9: Palindrome Number. """
 
-    self.assertEqual(True, Solution().isPalindrome(0))
-    self.assertEqual(True, Solution().isPalindrome(1))
-    self.assertEqual(True, Solution().isPalindrome(7))
+    def test(self):
+        # negative nums are not considered palindromes
+        self.assertEqual(False, Solution().is_palindrome(-1))
+        self.assertEqual(False, Solution().is_palindrome(-121))
 
-    self.assertEqual(True, Solution().isPalindrome(22))
-    self.assertEqual(True, Solution().isPalindrome(212))
+        # single-digits nums are palindromes
+        self.assertEqual(True, Solution().is_palindrome(0))
+        self.assertEqual(True, Solution().is_palindrome(1))
+        self.assertEqual(True, Solution().is_palindrome(7))
 
-    self.assertEqual(False, Solution().isPalindrome(123))
-    self.assertEqual(False, Solution().isPalindrome(10))
-    self.assertEqual(False, Solution().isPalindrome(100))
+        # more examples of palindromes
+        self.assertEqual(True, Solution().is_palindrome(22))
+        self.assertEqual(True, Solution().is_palindrome(212))
+
+        # some non-examples of palindromes
+        self.assertEqual(False, Solution().is_palindrome(123))
+        self.assertEqual(False, Solution().is_palindrome(10))
+        self.assertEqual(False, Solution().is_palindrome(100))
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

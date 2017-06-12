@@ -1,6 +1,8 @@
 import numpy
 
 class Solution(object):
+    """ Solution for Leetcode problem 49: Group Anagrams. """
+
     def groupAnagrams(self, words):
         """
         :type strs: List[str]
@@ -35,6 +37,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 49: Group Anagrams. """
+    
     def test(self):
         words = ["eat", "tea", "tan", "ate", "nat", "bat"]
         expect = [

@@ -1,4 +1,5 @@
 class Solution(object):
+    """ Solution for Leetcode problem 27: Remove Element. """
     def removeElement(self, nums, val):
         """
         :type nums: List[int]
@@ -18,6 +19,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 27: Remove Element. """
+    
   def test(self):
 
     cases = [

@@ -1,6 +1,7 @@
 from functools import reduce
 
 class Solution(object):
+    """ Solution for Leetcode problem 136: Single Number. """
     def singleNumber(self, nums):
         """
         :type nums: List[int]
@@ -12,6 +13,7 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 136: Single Number. """
     def test(self):
         # self.assertEqual(0, Solution().insert_function())
         self.assertEqual([], Solution().singleNumber([]))

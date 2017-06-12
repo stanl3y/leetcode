@@ -1,4 +1,5 @@
 class Solution(object):
+    """ Solution for Leetcode problem 48: Rotate Image. """
 
     @staticmethod
     def rotCCW(i, j, matrix_side):
@@ -84,6 +85,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 48: Rotate Image. """
+    
     def test_even(self):
         matrix = [
           [1,2],

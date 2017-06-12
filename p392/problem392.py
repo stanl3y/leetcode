@@ -1,4 +1,6 @@
 class Solution(object):
+    """ Solution for Leetcode problem 392: Is Subsequence. """
+
     def isSubsequence(self, sub_str, string):
         """
         :type sub_str: str
@@ -20,6 +22,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 392: Is Subsequence. """
+    
     def test(self):
         cases = {
             ("", "abc"): True,

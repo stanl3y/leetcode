@@ -1,6 +1,8 @@
 import math
 
 class Solution(object):
+    """ Solution for Leetcode problem 46: Permutations. """
+
     def permute(self, nums):
 
         return self.permute_alter(nums)
@@ -74,6 +76,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 46: Permutations. """
+    
     def test(self):
         # self.assertEqual(0, Solution().insert_function())
         cases = [

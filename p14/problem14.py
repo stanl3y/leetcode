@@ -1,5 +1,5 @@
 class Solution(object):
-    """ solves Leetcode problem #14: Longest Common Prefix """
+    """ Solution for Leetcode problem 14: Longest Common Prefix. """
 
     def longestCommonPrefix(self, strs):
         """
@@ -49,6 +49,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 14: Longest Common Prefix. """
+    
   def test(self):
     self.assertEqual("", Solution().prefixOfTwo("", "abcd"))
     self.assertEqual("abc", Solution().prefixOfTwo("abcd", "abcefl"))

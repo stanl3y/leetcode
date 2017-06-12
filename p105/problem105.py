@@ -1,6 +1,8 @@
 from tree_utils import *
 
 class Solution(object):
+    """ Solution for Leetcode problem 105: Bin Tree from Inorder & Preorder. """
+
     def buildTree(self, preorder, inorder):
         """
         :type preorder: List[int]
@@ -33,6 +35,8 @@ class Solution(object):
 import unittest
 
 class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 105: Bin Tree from Inorder & Preorder. """
+    
     def test(self):
         preorder = [1,2,4,5,10,11,3,7,14]
         inorder = [4,2,10,5,11,1,3,14,7]
