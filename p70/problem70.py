@@ -1,11 +1,13 @@
 class Solution(object):
     """ Solution for Leetcode problem 70: Climbing Stairs. """
     
-    def climbStairs(self, n):
-        """
+    def climb_stairs(self, n):
+        """Count ways to climb stairs (taking one or two steps at a time).
+        
         :type n: int
         :rtype: int
         """
+        
         if n < 0: return 0
 
         # idea: given that we can take either one or two steps
@@ -27,7 +29,7 @@ class ProblemTest(unittest.TestCase):
         cases = {1:1, 2:2, 3:3, 5:8}
 
         for when, expect in cases.items():
-            self.assertEqual(expect, Solution().climbStairs(when))
+            self.assertEqual(expect, Solution().climb_stairs(when))
 
 if __name__ == '__main__':
     unittest.main()

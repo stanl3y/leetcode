@@ -1,10 +1,13 @@
 class Solution(object):
     """ Solution for Leetcode problem 13: Roman to Integer. """
-    def romanToInt(self, s):
-        """
+
+    def roman_to_int(self, s):
+        """Convert a Roman numeral to decimal representation.
+
         :type s: str
         :rtype: int
         """
+        
         value = { "I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000 }
         summands = []
 
@@ -31,7 +34,7 @@ class ProblemTest(unittest.TestCase):
         cases.update({2: "II", 9: "IX", 49: "XLIX", 94: "XCIV"})
 
         for integer, roman in cases.items():
-            self.assertEqual(integer, Solution().romanToInt(roman))
+            self.assertEqual(integer, Solution().roman_to_int(roman))
 
 if __name__ == '__main__':
     unittest.main()

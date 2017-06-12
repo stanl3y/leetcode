@@ -2,7 +2,9 @@ class Solution(object):
     """ Solution for Leetcode problem 48: Rotate Image. """
 
     @staticmethod
-    def rotCCW(i, j, matrix_side):
+    def rot_CCW(i, j, matrix_side):
+        """Rotate a point in a matrix by 90 deg CCW. """
+
         shift = (matrix_side - 1) / 2
 
         # convert matrix notation into Cartesian
@@ -22,16 +24,17 @@ class Solution(object):
 
         return (i,j)
 
-    def rotateMatrix(self, matrix):
-        """
+    def rotate_matrix(self, matrix):
+        """Rotate a matrix by 90 deg clockwise (in place).
+
         :type matrix: List[List[int]]
         :rtype: void Do not return anything, modify matrix in-place instead.
         """
 
         self.matrix_len = len(matrix)
 
-        def rotCCW(i, j):
-            return Solution.rotCCW(i, j, self.matrix_len)
+        def rot_CCW(i, j):
+            return Solution.rot_CCW(i, j, self.matrix_len)
 
         def get_matrix(i, j):
             return matrix[i][j]
@@ -39,15 +42,14 @@ class Solution(object):
         def set_matrix(i, j, val):
             matrix[i][j] = val
 
-
-
-        def rotatePoint(i, j):
+        def rotate_point(i, j):
+            """ Rotate a point and its three images in other quadrants. """
             aside = get_matrix(i, j)
 
             for _ in range(3):
-                new_val = get_matrix(*rotCCW(i,j))
+                new_val = get_matrix(*rot_CCW(i,j))
                 set_matrix(i, j, new_val)
-                i, j = rotCCW(i, j)
+                i, j = rot_CCW(i, j)
 
             set_matrix(i, j, aside)
 
@@ -64,23 +66,20 @@ class Solution(object):
         # 3 3 x 4 4 
         # 3 3 x 4 4
 
-
         half_len = len(matrix) // 2
 
+        # for each point in the upper-left quadrant
+        # rotate this point and its corresponding three images under rotation
         for i in range(half_len):
             for j in range(half_len):
-                rotatePoint(i, j)
+                rotate_point(i, j)
 
+        # in the odd case, rotate the central cross also
         if len(matrix) % 2 == 1:
             for i in range(half_len):
-                rotatePoint(i, len(matrix)//2 ) # indexing starts at zero
+                rotate_point(i, len(matrix)//2 ) # indexing starts at zero
 
 
-
-
-
-
-      
 
 import unittest
 
@@ -88,6 +87,8 @@ class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 48: Rotate Image. """
     
     def test_even(self):
+        """ Test a matrix with even side length. """
+
         matrix = [
             [1,2],
             [3,4]  
@@ -97,10 +98,13 @@ class ProblemTest(unittest.TestCase):
             [3,1],
             [4,2]
         ]
-        Solution().rotateMatrix(matrix)
+
+        Solution().rotate_matrix(matrix)
         self.assertEqual(exp_matrix, matrix)
 
     def test_odd(self):
+        """ Test a matrix with odd side length. """
+
         matrix = [
             [1,2,3],
             [4,5,6],
@@ -113,15 +117,17 @@ class ProblemTest(unittest.TestCase):
             [9,6,3]
         ]
 
-        Solution().rotateMatrix(matrix)
+        Solution().rotate_matrix(matrix)
         self.assertEqual(expect, matrix)
 
-    def test_rotCCW(self):
-        self.assertEqual((1,0), Solution.rotCCW(*(0,0),2))
-        self.assertEqual((1,1), Solution.rotCCW(*(1,0),2))
+    def test_rot_CCW(self):
+        """ Test the rot_CCW method. """
 
-        self.assertEqual((1,0), Solution.rotCCW(*(0,1),3))
-        self.assertEqual((2,0), Solution.rotCCW(*(0,0),3))
+        self.assertEqual((1,0), Solution.rot_CCW(*(0,0),2))
+        self.assertEqual((1,1), Solution.rot_CCW(*(1,0),2))
+
+        self.assertEqual((1,0), Solution.rot_CCW(*(0,1),3))
+        self.assertEqual((2,0), Solution.rot_CCW(*(0,0),3))
 
 if __name__ == '__main__':
     unittest.main()

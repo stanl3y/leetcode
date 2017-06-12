@@ -2,7 +2,8 @@ class Solution(object):
     """ Solution for Leetcode problem 38: Count and Say. """
 
     def countAndSay(self, n):
-        """
+        """Generate the n-th term of the Count-and-Say sequence.
+
         :type n: int
         :rtype: str
         """
@@ -13,6 +14,8 @@ class Solution(object):
 
 
     def next_step(self, nums, n):
+        """ Recursively generate n more terms. """
+
         if n == 0:
             return nums
 
@@ -29,14 +32,11 @@ class Solution(object):
         return self.next_step(new_nums, n-1)
 
 
-
-
-        
-
 import unittest
 
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 38: Count and Say. """
+
     def test(self):
         self.assertEqual("1", Solution().countAndSay(1))
         self.assertEqual("111221", Solution().countAndSay(5))
@@ -46,5 +46,5 @@ class ProblemTest(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-# model solutions, see.. 
-# https://discuss.leetcode.com/topic/32023/4-5-lines-python-solutions
+#   Note: see model solutions at..
+#   https://discuss.leetcode.com/topic/32023/4-5-lines-python-solutions

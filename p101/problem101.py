@@ -2,29 +2,29 @@ from tree_utils import *    # see leetcode/utils/tree_utils.py
 from queue import Queue
 
 class Solution(object):
-    """ Solution to Leetcode problem 101: Symmetric Tree. 
+    """Solution to Leetcode problem 101: Symmetric Tree. 
 
     Definition for a binary tree node.
-        class TreeNode(object):
-            def __init__(self, x):
-                self.val = x
-                self.left = None
-                self.right = None
+    class TreeNode(object):
+        def __init__(self, x):
+            self.val = x
+            self.left = None
+            self.right = None
     """
 
-    def isSymmetric(self, root):
-        """
-        Determines whether a given binary tree is vertically symmetric.                        
+    def is_symmetric(self, root):
+        """Determine whether a given binary tree is left-right symmetric.                        
 
         :type root: TreeNode
         :rtype: bool
         """
+        
         if not root: return True
-        return self.isSymmetric_recursive(root)
+        return self.is_symmetric_recursive(root)
 
 
-    def isSymmetric_recursive(self, root):
-        """ Recursive solution. """
+    def is_symmetric_recursive(self, root):
+        """Symmetric tree: recursive solution. """
 
         def recursion(node1, node2):
             if (not node1) and (not node2): return True
@@ -35,8 +35,8 @@ class Solution(object):
 
         return recursion(root.left, root.right)
 
-    def isSymmetric_iterative(self, root):
-        """ Iterative solution. """
+    def is_symmetric_iterative(self, root):
+        """Symmetric tree: iterative solution. """
 
         queueL = Queue(); queueL.put(root.left)
         queueR = Queue(); queueR.put(root.right)
@@ -83,14 +83,14 @@ class ProblemTest(unittest.TestCase):
         """ Modify the test tree and run tests accordingly. """
 
         # the initial tree should be symmetric
-        self.assertEqual(True, Solution().isSymmetric(self.root))
+        self.assertEqual(True, Solution().is_symmetric(self.root))
 
         # remove a node, then check asymmetry
         n4 = self.root.right.left
         self.assertEqual(4, n4.val)
 
         n4.right = None   # desymmetrize
-        self.assertEqual(False, Solution().isSymmetric(self.root))
+        self.assertEqual(False, Solution().is_symmetric(self.root))
         self.root.left.right.left = None    # symmetrize again
 
         # swap nodes, then check asymmetry
@@ -98,7 +98,7 @@ class ProblemTest(unittest.TestCase):
         self.assertEqual(2, n2.val)
 
         n2.left, n2.right = n2.right, n2.left
-        self.assertEqual(False, Solution().isSymmetric(self.root))
+        self.assertEqual(False, Solution().is_symmetric(self.root))
 
 
 if __name__ == '__main__':

@@ -1,12 +1,14 @@
 class Solution(object):
     """ Solution for Leetcode problem 392: Is Subsequence. """
 
-    def isSubsequence(self, sub_str, string):
-        """
+    def is_subsequence(self, sub_str, string):
+        """Given two strings, decide if one is a substring of the other.
+
         :type sub_str: str
         :type string: str
         :rtype: bool
         """
+        
         if len(sub_str) == 0: return True
         if len(sub_str) > len(string): return False
 
@@ -33,9 +35,7 @@ class ProblemTest(unittest.TestCase):
         }
 
         for when, expect in cases.items():
-            self.assertEqual(expect, Solution().isSubsequence( *when))
+            self.assertEqual(expect, Solution().is_subsequence( *when))
 
 if __name__ == '__main__':
     unittest.main()
-        
-

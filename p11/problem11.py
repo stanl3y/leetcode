@@ -1,11 +1,13 @@
 class Solution(object):
     """ Solution for Leetcode problem 11: Container With Most Water. """
 
-    def maxArea(self, heights):
-        """
+    def max_area(self, heights):
+        """Given a list of bars, find the two that can hold the most water.
+
         :type height: List[int]
         :rtype: int
         """
+        
         if len(heights) < 2: return 0
 
         lo, hi = 0, len(heights)-1
@@ -28,7 +30,7 @@ class ProblemTest(unittest.TestCase):
 
     def test(self):
         heights = [2,1,10,3,12,1,1,4]
-        self.assertEqual(20, Solution().maxArea(heights))
+        self.assertEqual(20, Solution().max_area(heights))
 
 if __name__ == '__main__':
     unittest.main()

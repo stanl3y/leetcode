@@ -1,17 +1,19 @@
 class Solution(object):
     """ Solution for Leetcode problem 41: First Missing Positive. """
 
-    def firstMissingPositive(self, nums):
-        """
+    def first_missing_positive(self, nums):
+        """Find the first missing positive num in a list of integers.
+
         :type nums: List[int]
         :rtype: int
         """
+
         def swap(i1, i2):
             nums[i1], nums[i2] = nums[i2], nums[i1]
 
         # (imagine sorting 1,2,3 ... n)
-        # idea: put each element between 1 and len(nums)
-        # to its correct position, ignore other numbers
+        # idea: put each element between 1 and len(nums)..
+        # ..to its correct position; ignore other numbers
 
         ind = 0
 
@@ -40,7 +42,7 @@ class ProblemTest(unittest.TestCase):
         }
 
         for when, expect in cases.items():
-            self.assertEqual(expect, Solution().firstMissingPositive( list(when) ))
+            self.assertEqual(expect, Solution().first_missing_positive( list(when) ))
 
 if __name__ == '__main__':
     unittest.main()

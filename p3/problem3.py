@@ -2,7 +2,7 @@ class Solution(object):
     """ Solution for Leetcode problem 3: Longest Substring..  . """
 
     def longest_substr_len(self, string):
-        """ Finds the len of long. substr with no duplicate chars. 
+        """Find the length of long. substr with no duplicate chars. 
 
         :type s: str
         :rtype: int
@@ -27,7 +27,7 @@ class Solution(object):
 
         return max_len
 
-        
+
 
 import unittest
 

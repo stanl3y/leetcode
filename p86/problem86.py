@@ -1,20 +1,23 @@
 from linked_list import ListNode
 
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
 class Solution(object):
-    """ Solution for Leetcode problem 86: Partition List. """
+    """ Solution for Leetcode problem 86: Partition List. 
+
+        Definition for singly-linked list.
+            class ListNode(object):
+                def __init__(self, x):
+                self.val = x
+                self.next = None
+    """
 
     def partition(self, head, split):
-        """
+        """Partition a linked-list based on a given pivot. 
+        
         :type head: ListNode
         :type x: int
         :rtype: ListNode
         """
+        
         # initialize
         last_lo = root_lo = ListNode(None)
         last_hi = root_hi = ListNode(None)

@@ -3,7 +3,7 @@ class Solution(object):
 
     def is_palindrome(self, num):
         """
-        Determines whether a given integer is a palindrome.
+        Determine whether a given integer is a palindrome.
 
         :type x: int
         :rtype: bool
@@ -24,9 +24,6 @@ class Solution(object):
             hi, lo = hi / 10, lo * 10
 
         return True if num == 0 else False
-
-
-
 
 
 

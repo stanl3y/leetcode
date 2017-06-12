@@ -1,8 +1,9 @@
 class Solution(object):
     """ Solution for Leetcode problem 67: Add Binary. """
 
-    def addBinary(self, a, b):
-        """
+    def add_binary(self, a, b):
+        """Add two binary numbers represented as strings.
+        
         :type a: str
         :type b: str
         :rtype: str
@@ -31,8 +32,8 @@ import unittest
 
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 67: Add Binary. """
+
     def test(self):
-        # self.assertEqual(0, Solution().insert_function())
         cases = [
             { 'when': ["1001", "100"], 'exp': "1101" },
             { 'when': ["1", "1"], 'exp': "10" },
@@ -40,7 +41,7 @@ class ProblemTest(unittest.TestCase):
         ]
 
         for case in cases:
-            self.assertEqual(case['exp'], Solution().addBinary(*case['when']))
+            self.assertEqual(case['exp'], Solution().add_binary(*case['when']))
 
 if __name__ == '__main__':
     unittest.main()

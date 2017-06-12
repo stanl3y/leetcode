@@ -1,16 +1,18 @@
 from linked_list import ListNode
 
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
 class Solution(object):
-    """ Solution for Leetcode problem 24: Swap Nodes in Pairs. """
+    """ Solution for Leetcode problem 24: Swap Nodes in Pairs. 
 
-    def swapPairs(self, head):
-        """
+    Definition for singly-linked list.
+    class ListNode(object):
+        def __init__(self, x):
+            self.val = x
+            self.next = None
+    """
+
+    def swap_pairs(self, head):
+        """Swap consecutive pairs of nodes in a linked list.
+
         :type head: ListNode
         :rtype: ListNode
         """
@@ -38,9 +40,8 @@ import unittest
 
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 24: Swap Nodes in Pairs. """
-    def test(self):
-        #self.assertEqual(0, Solution().insert_function())
 
+    def test(self):
         cases = [
             [[], []],
             [[1], [1]],
@@ -53,11 +54,10 @@ class ProblemTest(unittest.TestCase):
             given, expect = each_case
 
             link_list = ListNode.array_to_linked_list(given)
-            answer = Solution().swapPairs(link_list)
+            answer = Solution().swap_pairs(link_list)
             answer_list = ListNode.linked_list_to_array(answer, [])
 
             self.assertEqual(expect, answer_list)
-
 
 if __name__ == '__main__':
     unittest.main()

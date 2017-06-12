@@ -3,29 +3,32 @@ import bisect
 class Solution(object):
     """ Solution for Leetcode problem 33: Search in Rotated Sorted Array. """
 
-    def midpoint(self, a, b):
-        return a + (b - a) // 2
-
     def search(self, nums, target):
-        """
+        """Search for a number in a sorted array that has been rotated.
+
         :type nums: List[int]
         :type target: int
         :rtype: int
         """
 
-        if not nums: return -1
+        def midpoint(a, b):
+            return a + (b - a) // 2
 
         # idea: find split, then perform binary search in sorted segment
+        if not nums: return -1
+
         lo, hi = 0, len(nums)-1
 
         # find the split, if present        
         if not nums[lo] < nums[hi]:
 
             while hi - lo > 1:
-                mid = self.midpoint(lo, hi)
+                mid = midpoint(lo, hi)
 
-                if nums[mid] < nums[lo]: hi = mid # hit the second part
-                else: lo = mid  # hit the first part
+                if nums[mid] < nums[lo]: # hit the second part
+                    hi = mid 
+                else: # hit the first part
+                    lo = mid  
             before_split, after_split = lo, hi
 
             # restrict to the appropriate section
@@ -43,6 +46,7 @@ import unittest
 
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 33: Search in Rotated Sorted Array. """
+
     def test(self):
         # general case
         my_nums = [4,5,6,7,0,1,2]

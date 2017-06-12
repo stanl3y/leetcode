@@ -1,11 +1,13 @@
 class Solution(object):
     """ Solution for Leetcode problem 17: Letter Combinations.. . """
 
-    def letterCombinations(self, digits):
-        """
+    def letter_combinations(self, digits):
+        """Generate all strings a number might produce on a mobile keypad.
+
         :type digits: str
         :rtype: List[str]
         """
+
         if not digits: return []
 
         letters = {
@@ -29,7 +31,7 @@ class Solution(object):
             for letter in letters[digit]:
                 for item in result:
                     new_result.append(item + letter)
-
+                    
             result = new_result
 
         return result
@@ -47,7 +49,7 @@ class ProblemTest(unittest.TestCase):
         }
 
         for case, expect in cases.items():
-            self.assertEqual(set(expect), set(Solution().letterCombinations(case)))
+            self.assertEqual(set(expect), set(Solution().letter_combinations(case)))
 
 if __name__ == '__main__':
     unittest.main()

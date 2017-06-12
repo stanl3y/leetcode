@@ -3,11 +3,13 @@ import numpy
 class Solution(object):
     """ Solution for Leetcode problem 49: Group Anagrams. """
 
-    def groupAnagrams(self, words):
-        """
+    def group_anagrams(self, words):
+        """Group anagrams in a given list of strings.
+
         :type strs: List[str]
         :rtype: List[List[str]]
         """
+
         alphabet = "abcdefghijklmnopqrstuvwxyz"
         groups = {}
 
@@ -22,7 +24,9 @@ class Solution(object):
 
         return list(groups.values())
 
-    def groupAnagrams_alter(self, words):
+    def group_anagrams_alter(self, words):
+        """ Group anagrams (alternative solution). """
+        
         groups = {}
 
         for word in words:
@@ -47,8 +51,7 @@ class ProblemTest(unittest.TestCase):
             ["bat"] 
         ]
 
-        answer = Solution().groupAnagrams(words)
-
+        answer = Solution().group_anagrams(words)
         sorted_answer = sorted([sorted(x) for x in answer])
         sorted_expect = sorted([sorted(x) for x in expect])
 

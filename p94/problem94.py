@@ -1,5 +1,6 @@
-# Definition for a binary tree node.
 class TreeNode(object):
+    """Definition for a binary tree node. """
+
     def __init__(self, x):
         self.val = x
         self.left = None
@@ -11,22 +12,27 @@ class Solution(object):
     def __init__(self):
         self.inorder = []
 
-    def inorderTraversal(self, root):
-        """
+    def inorder_traversal(self, root):
+        """Generate the inorder traversal of a binary tree.
+
         :type root: TreeNode
         :rtype: List[int]
         """
-        # self.inorderTraversal_recursive(root)
-        self.inorderTraversal_iterative(root)
+
+        self.inorder_traversal_iterative(root)
         return self.inorder
 
-    def inorderTraversal_recursive(self, node):
-        if not node: return
-        self.inorderTraversal_recursive(node.left)
-        self.inorder.append(node.val)
-        self.inorderTraversal_recursive(node.right)
+    def inorder_traversal_recursive(self, node):
+        """Generate the inorder traversal recursively. """
 
-    def inorderTraversal_iterative(self, root):
+        if not node: return
+        self.inorder_traversal_recursive(node.left)
+        self.inorder.append(node.val)
+        self.inorder_traversal_recursive(node.right)
+
+    def inorder_traversal_iterative(self, root):
+        """Generate the inorder traversal iteratively. """
+
         stack = []
         stack.append(root)
         visited = set()
@@ -43,21 +49,20 @@ class Solution(object):
 
 
 
-
-
-
-
 import unittest
 
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 94: Binary Tree Inorder Traversal. """
+    
     def test(self):
-        self.assertEqual([], Solution().inorderTraversal(None))
+        self.assertEqual([], Solution().inorder_traversal(None))
+
+        # initialize a test tree
 
         # depth 0
         root = TreeNode(1)
 
-        self.assertEqual([1], Solution().inorderTraversal( root))
+        self.assertEqual([1], Solution().inorder_traversal( root))
         
         # depth 1
         n2 = TreeNode(2); root.left = n2
@@ -69,7 +74,7 @@ class ProblemTest(unittest.TestCase):
         n6 = TreeNode(6) # not used
         n7 = TreeNode(7); n3.right = n7
 
-        self.assertEqual([4,2,5,1,3,7], Solution().inorderTraversal( root))
+        self.assertEqual([4,2,5,1,3,7], Solution().inorder_traversal( root))
 
 
 if __name__ == '__main__':

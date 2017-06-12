@@ -4,9 +4,8 @@ class Solution(object):
     """ Solution for Leetcode problem 46: Permutations. """
 
     def permute(self, nums):
+        """Generate all permutations of a set of distinct integers.
 
-        return self.permute_alter(nums)
-        """
         :type nums: List[int]
         :rtype: List[List[int]]
         """
@@ -24,13 +23,28 @@ class Solution(object):
 
         return partials
 
-    ### Alternative solution ###
+    def permute_alter(self, nums):
+        """Generate all permutations of given nums (alternative). """
+
+        nums = sorted(nums)
+        result = []
+
+        for _ in range(math.factorial(len(nums))):
+            result.append(nums[:])
+            nums = self.next_permutation(nums)
+
+        return result
 
     def next_permutation(self, nums):
+        """Given a permutation, find the 'consecutive' one. 
+
+            eg. given (2,4,3,1), return (3,1,2,4)
+        """
+
         for i in range(1, len(nums)):
             if nums[~i] < nums[~(i-1)]:
                 
-                for j in range(i): # array sorted, could apply binary search(?)
+                for j in range(i):
                     if nums[~j] > nums[~i]: break
 
                 nums[~i], nums[~j] = nums[~j], nums[~i]
@@ -44,17 +58,28 @@ class Solution(object):
 
         return nums
 
-    def permute_alter(self, nums):
-        nums = sorted(nums)
-        result = []
-
-        for _ in range(math.factorial(len(nums))):
-            result.append(nums[:])
-            nums = self.next_permutation(nums)
-
-        return result
 
 
+import unittest
+
+class ProblemTest(unittest.TestCase):
+    """ Tests for Leetcode problem 46: Permutations. """
+    
+    def test(self):
+        cases = [
+            {'given': [1,2,3], 'expect': 
+                [[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2],[3,2,1]] },
+            {'given': [], 'expect': [[]]}
+        ]
+
+        for case in cases:
+            expect = sorted( case['expect'])
+            answer = sorted( Solution().permute( case['given']))
+
+            self.assertEqual(expect, answer)
+
+if __name__ == '__main__':
+    unittest.main()
 
 
 # OTHER APPROACHES
@@ -69,29 +94,3 @@ class Solution(object):
 
 # IDEA: in turn swap first entry with all subsequent, then second with all subsequent..
 # see https://discuss.leetcode.com/topic/5881/my-elegant-recursive-c-solution-with-inline-explanation
-
-        
-
-
-import unittest
-
-class ProblemTest(unittest.TestCase):
-    """ Tests for Leetcode problem 46: Permutations. """
-    
-    def test(self):
-        # self.assertEqual(0, Solution().insert_function())
-        cases = [
-            {'given': [1,2,3], 'expect': 
-                [[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2],[3,2,1]] },
-
-            {'given': [], 'expect': [[]]}
-        ]
-
-        for case in cases:
-            expect = sorted( case['expect'])
-            answer = sorted( Solution().permute( case['given']))
-
-            self.assertEqual(expect, answer)
-
-if __name__ == '__main__':
-    unittest.main()

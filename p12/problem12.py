@@ -1,11 +1,13 @@
 class Solution(object):
     """ Solution for Leetcode problem 12: Integer to Roman. """
 
-    def intToRoman(self, num):
-        """
+    def int_to_roman(self, num):
+        """Convert an integer to a Roman numeral.
+
         :type num: int
         :rtype: str
         """
+
         digits = {
                 0: {1: "I", 5: "V"},
                 1: {1: "X", 5: "L"},
@@ -41,12 +43,6 @@ class Solution(object):
 
 
 
-
-
-        
-
-
-
 import unittest
 
 class ProblemTest(unittest.TestCase):
@@ -58,7 +54,7 @@ class ProblemTest(unittest.TestCase):
         cases.update({2: "II", 9: "IX", 49: "XLIX", 94: "XCIV"})
 
         for integer, roman in cases.items():
-          self.assertEqual(roman, Solution().intToRoman(integer))
+          self.assertEqual(roman, Solution().int_to_roman(integer))
 
 if __name__ == '__main__':
     unittest.main()

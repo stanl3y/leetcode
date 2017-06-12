@@ -4,9 +4,15 @@ from queue import Queue
 class Solution(object):
     """ Solution for Leetcode problem 63: Unique Paths II. """
 
-    def uniquePathsWithObstacles(self, obstacles):
-        """ counts right-down paths in a rectangle """
-        """
+    # Remarks
+    #   * with dynamic prog could use only one dimensional grid
+    #       (see https://discuss.leetcode.com/topic/10974/short-java-solution/2)
+    #   * could use padding to avoid borderline testing
+    #   * using dp with vectorized operations would likely be faster
+
+    def unique_paths_with_obstacles(self, obstacles):
+        """Count right-down paths in a rectangle.
+
         :type obstacles: List[List[int]]
         :rtype: int
         """
@@ -42,13 +48,10 @@ class Solution(object):
 
         return grid[-1][-1]
 
-# Remarks
-#   * with dynamic prog could use only one dimensional grid
-#       (see https://discuss.leetcode.com/topic/10974/short-java-solution/2)
-#   * could use padding to avoid borderline testing
-#   * using dp with vectorized operations would likely be faster
 
-    def uniquePathsWithObstacles_vectorized(self, obstacles):
+
+    def unique_paths_with_obstacles_vectorized(self, obstacles):
+        """Count right-down paths in a rectangle (vectorized). """
         pass
 
 
@@ -72,7 +75,7 @@ class ProblemTest(unittest.TestCase):
         }
 
         for when, expect in cases.items():
-            self.assertEqual(expect, Solution().uniquePathsWithObstacles(when))
+            self.assertEqual(expect, Solution().unique_paths_with_obstacles(when))
 
 if __name__ == '__main__':
     unittest.main()

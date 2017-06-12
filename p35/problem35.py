@@ -1,12 +1,14 @@
 class Solution(object):
     """ Solution for Leetcode problem 35: Search Insert Position. """
 
-    def searchInsert(self, nums, target):
-        """
+    def search_insert(self, nums, target):
+        """ Search for an insert position in a sorted array.
+
         :type nums: List[int]
         :type target: int
         :rtype: int
         """
+
         lo, hi = 0, len(nums)
 
         while lo < hi:
@@ -21,19 +23,17 @@ class Solution(object):
         return lo 
 
 
-
 import unittest
 
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 35: Search Insert Position. """
     
     def test(self):
-        self.assertEqual(2, Solution().searchInsert([1,2,3,4], 3)) # find middle
-        self.assertEqual(2, Solution().searchInsert([1,2,4,5], 3)) # insert middle
+        self.assertEqual(2, Solution().search_insert([1,2,3,4], 3)) # find middle
+        self.assertEqual(2, Solution().search_insert([1,2,4,5], 3)) # insert middle
 
-        self.assertEqual(0, Solution().searchInsert([1,2,3,4], 0)) # insert left edge
-        self.assertEqual(4, Solution().searchInsert([1,2,3,4], 5)) # insert right edge
-
+        self.assertEqual(0, Solution().search_insert([1,2,3,4], 0)) # insert left edge
+        self.assertEqual(4, Solution().search_insert([1,2,3,4], 5)) # insert right edge
 
 
 if __name__ == '__main__':

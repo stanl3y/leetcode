@@ -1,11 +1,13 @@
 class Solution(object):
     """ Solution for Leetcode problem 90: Subsets II. """
 
-    def subsetsWithDup(self, nums):
-        """
+    def subsets_with_dup(self, nums):
+        """Given a set of elements (with duplicates), find all unique subsets.
+
         :type nums: List[int]
         :rtype: List[List[int]]
         """
+        
         nums.sort()
         result = []
         partial_nums = []
@@ -35,7 +37,6 @@ class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 90: Subsets II. """
     
     def test(self):
-        # self.assertEqual(0, Solution().insert_function())
         cases = [
             { 'when': [], 'expect': [[]]},
             { 'when': [1,2], 'expect': [[], [1], [2], [1,2],]},
@@ -43,7 +44,7 @@ class ProblemTest(unittest.TestCase):
         ]
 
         for case in cases:
-            answer = Solution().subsetsWithDup(case['when'])
+            answer = Solution().subsets_with_dup(case['when'])
             sorted_answer = sorted([ sorted(x) for x in answer])
             sorted_expect = sorted([ sorted(x) for x in case['expect']])
 

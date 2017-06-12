@@ -1,16 +1,16 @@
 class Solution(object):
     """ Solution for Leetcode problem 22: Generate Parentheses. """
 
-    def generateParenthesis(self, n):
-        """
+    def generate_bracketings(self, n):
+        """Generates all bracketings of n elements.
+
         :type n: int
         :rtype: List[str]
         """
+
         result = []
 
         def recursion(prths_part, open_used, closed_used):
-            print(prths_part)
-
             if closed_used == n:
                 result.append( "".join(prths_part))
             else:
@@ -30,27 +30,23 @@ class Solution(object):
         return result
 
 
-
-
-
-
 import unittest
 
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 22: Generate Parentheses. """
     
     def test(self):
-        self.assertEqual([''], Solution().generateParenthesis(0))
-        self.assertEqual(["()"], Solution().generateParenthesis(1))
+        self.assertEqual([''], Solution().generate_bracketings(0))
+        self.assertEqual(["()"], Solution().generate_bracketings(1))
 
         level3_prths = [
             "((()))",
             "(()())",
             "(())()",
             "()(())",
-            "()()()"
+            "()()()",
         ]
-        self.assertEqual(level3_prths, Solution().generateParenthesis(3))
+        self.assertEqual(level3_prths, Solution().generate_bracketings(3))
 
 if __name__ == '__main__':
     unittest.main()

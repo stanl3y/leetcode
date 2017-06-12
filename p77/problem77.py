@@ -1,17 +1,22 @@
 import time
+
 class Solution(object):
     """ Solution for Leetcode problem 77: Combinations. """
 
     def combine(self, n, k):
-        """
+        """ Find all combinations of length k of the nums 1,2...n.
+        
         :type n: int
         :type k: int
         :rtype: List[List[int]]
         """
+
         return self.combinations(list(range(1,n+1)), k)
 
 
     def combinations(self, nums, size):
+        """Given a set of nums, find all combinations of a given size. """
+        
         nums.sort()
         result = []
         partial_nums = []

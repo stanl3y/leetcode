@@ -1,8 +1,9 @@
 class Solution(object):
     """ Solution for Leetcode problem 20: Valid Parentheses. """
 
-    def isValid(self, string):
-        """
+    def is_valid_bracketing(self, string):
+        """Verify whether a given bracketing is valid.
+
         :type s: str
         :rtype: bool
         """
@@ -26,19 +27,21 @@ import unittest
 
 class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 20: Valid Parentheses. """
+
     def test(self):
-        self.assertEqual(True, Solution().isValid(""))
-        self.assertEqual(True, Solution().isValid("([{}])"))
-        self.assertEqual(True, Solution().isValid("({})[]"))
+        # correct bracketings
+        self.assertEqual(True, Solution().is_valid_bracketing(""))
+        self.assertEqual(True, Solution().is_valid_bracketing("([{}])"))
+        self.assertEqual(True, Solution().is_valid_bracketing("({})[]"))
 
         # not all brackets closed
-        self.assertEqual(False, Solution().isValid("({}"))
+        self.assertEqual(False, Solution().is_valid_bracketing("({}"))
 
         # closing the wrong bracket
-        self.assertEqual(False, Solution().isValid("(}"))
+        self.assertEqual(False, Solution().is_valid_bracketing("(}"))
 
         # closing an unopened bracket
-        self.assertEqual(False, Solution().isValid("]"))
+        self.assertEqual(False, Solution().is_valid_bracketing("]"))
 
 if __name__ == '__main__':
     unittest.main()

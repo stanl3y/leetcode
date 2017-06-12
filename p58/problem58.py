@@ -1,8 +1,9 @@
 class Solution(object):
     """ Solution for Leetcode problem 58: Length of Last Word. """
 
-    def lengthOfLastWord(self, s):
-        """
+    def last_word_length(self, s):
+        """Find the length of the last word in a string.
+        
         :type s: str
         :rtype: int
         """
@@ -26,11 +27,11 @@ class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 58: Length of Last Word. """
     
     def test(self):
-        self.assertEqual(0, Solution().lengthOfLastWord(""))
-        self.assertEqual(0, Solution().lengthOfLastWord(" "))
+        self.assertEqual(0, Solution().last_word_length(""))
+        self.assertEqual(0, Solution().last_word_length(" "))
 
-        self.assertEqual(1, Solution().lengthOfLastWord("a "))
-        self.assertEqual(2, Solution().lengthOfLastWord("aaa bc "))
+        self.assertEqual(1, Solution().last_word_length("a "))
+        self.assertEqual(2, Solution().last_word_length("aaa bc "))
 
 if __name__ == '__main__':
     unittest.main()

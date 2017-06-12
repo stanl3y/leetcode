@@ -5,7 +5,9 @@ import re
 class Solution(object):
     """ Solution for Leetcode problem 91: Decode Ways. """
 
-    def numDecodings(self, string):
+    def num_decodings(self, string):
+        """Find no. of ways to convert a sequence of nums to letters."""
+        
         if not string: return 0
 
         symbols = self.extract_symbols_efficient(string)
@@ -22,6 +24,8 @@ class Solution(object):
         return num_decodings
 
     def calc_decodings(self, symbols):
+        """Given symbols, count the ways to decode them. """
+
         if not symbols: return 0
 
         # process symbols
@@ -40,6 +44,8 @@ class Solution(object):
         return reduce(mul, segm_ways)
 
     def extract_segments_regex(self, string):
+        """Split the input into independent blocks using RE. """
+
         # zeros always need a digit in front (1 or 2)
         if re.search('^0', string) or re.search('00', string): return []
 
@@ -50,8 +56,9 @@ class Solution(object):
         return re.split('[1-9]0', string)
 
 
-
     def extract_segments(self, string):
+        """Split the input into independent blocks. """
+
         segments, symbols = [], []
         slow = 0
 
@@ -71,9 +78,14 @@ class Solution(object):
 
 
     def segments_to_symbols(self, segments):
+        """Convert segments to symbols '-' and 'x'. 
+
+        Translate segments as 
+            "-" if two consecutive digits can be joined 
+            "x" otherwise
+        """
         symbols = []
 
-        # translate segments as "-" if two consecutive digits can be joined and "x" otherwise
         for segment in segments:
             for i in range(1, len(segment)):
                 symbols.append( "-" if 11 <= int(segment[i-1:i+1]) <= 26 else "x")
@@ -85,6 +97,13 @@ class Solution(object):
 
 
     def extract_symbols_efficient(self, string):
+        """Convert input to symbols (efficient method). 
+
+        Translate segments as 
+            "-" if two consecutive digits can be joined 
+            "x" otherwise
+        """
+
         symbols = []
         i = len(string) - 1
 
@@ -116,16 +135,15 @@ class ProblemTest(unittest.TestCase):
     """ Tests for Leetcode problem 91: Decode Ways. """
     
     def test(self):
-        self.assertEqual(0, Solution().numDecodings(""))
-        self.assertEqual(5, Solution().numDecodings("1111"))
-        self.assertEqual(15, Solution().numDecodings("1119111"))
-        self.assertEqual(5, Solution().numDecodings("11234"))
+        self.assertEqual(0, Solution().num_decodings(""))
+        self.assertEqual(5, Solution().num_decodings("1111"))
+        self.assertEqual(15, Solution().num_decodings("1119111"))
+        self.assertEqual(5, Solution().num_decodings("11234"))
         
-        self.assertEqual(0, Solution().numDecodings("0"))
-        self.assertEqual(0, Solution().numDecodings("11130"))
-        self.assertEqual(2, Solution().numDecodings("11201"))
-        self.assertEqual(1, Solution().numDecodings("1"))
-
+        self.assertEqual(0, Solution().num_decodings("0"))
+        self.assertEqual(0, Solution().num_decodings("11130"))
+        self.assertEqual(2, Solution().num_decodings("11201"))
+        self.assertEqual(1, Solution().num_decodings("1"))
 
 
 if __name__ == '__main__':
